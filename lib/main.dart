@@ -1,41 +1,58 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MisIconosApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MisIconosApp extends StatelessWidget {
+  const MisIconosApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Angel Tadeo"),
+          titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
+          centerTitle: true,
+          backgroundColor: Colors.redAccent,
+        ),
+        body: Column(
+          crossAxisAlignment:
+              CrossAxisAlignment.center, // Centra el contenido horizontalmente
+          children: <Widget>[
+            const Text(
+              "Angel Tadeo De Leon Mat:22308051281165",
+              style: TextStyle(fontSize: 18, color: Colors.black),
+            ),
+            const SizedBox(height: 100), // Espacio entre el texto y los iconos
+            Row(
+              mainAxisAlignment: MainAxisAlignment
+                  .spaceAround, // Distribuye los iconos horizontalmente
+              children: const <Widget>[
+                Icon(
+                  Icons.thumb_up_alt_sharp,
+                  color: Colors.green,
+                  size: 30.0,
+                  semanticLabel: 'Text to announce in accessibility modes',
+                ),
+                Icon(
+                  Icons.thumb_down_alt_sharp,
+                  color: Colors.red,
+                  size: 30.0,
+                ),
+                Icon(
+                  Icons.star,
+                  color: Colors.yellow,
+                  size: 30.0,
+                ),
+                Icon(
+                  Icons.theater_comedy,
+                  color: Colors.black,
+                  size: 30.0,
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
